@@ -2,18 +2,15 @@ package Teststand;
 
 public class Vehicle extends Producer {
 
-	private String vehicleType;
-	private String producerName;
 	private String color;
-	private Integer Verbrauch;
 	private String engineType;
-	private Integer fuelconsumption;
+	private Integer fuelConsumption;
 	
-	public Vehicle(String vehicleType, String producerName, String color) {
+	public Vehicle(final String vehicleType,final String producerName,final String color,final String engineType,final Integer fuelConsumption) {
 		super();
-		this.color = color; 
-		this.vehicleType = vehicleType;
-		this.producerName = producerName;
+		this.color = color;
+		this.engineType = engineType;
+		this.fuelConsumption = fuelConsumption;
 	}
 	
 	public String getColor() {
@@ -24,16 +21,22 @@ public class Vehicle extends Producer {
 		this.color = color;
 	}
 	
-	public Integer getVerbrauch() {
-		return Verbrauch;
+	public String getEngineType() {
+		return engineType;
 	}
 
-	public void setVerbrauch(Integer verbrauch) {
-		Verbrauch = verbrauch;
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
 	}
 
-	//Motor
-	//Verbrauch
+	public Integer getFuelConsumption() {
+		return fuelConsumption;
+	}
+
+	public void setFuelConsumption(Integer fuelConsumption) {
+		this.fuelConsumption = fuelConsumption;
+	}
+
 	//CO2Ausstoﬂ
 	//Teststand
 	//Verbrauch Messen
