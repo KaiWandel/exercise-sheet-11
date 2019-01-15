@@ -24,7 +24,7 @@ public class Engine {
 		return carbonEmissions;
 	}
 	public void setEfficiency(double efficiency) {
-		if (efficiency > 0 || efficiency < 1) {
+		if (efficiency > 0 && efficiency < 1) {
 			this.efficiency = efficiency; 
 		} else {
 			throw new IllegalArgumentException( "Efficiency nur zwischen 0 und 0.99" ); 
@@ -46,7 +46,13 @@ public class Engine {
 		return fuelConsumption;
 	}
 	public void setFuelConsumption(Integer fuelConsumption) {
-		this.fuelConsumption = fuelConsumption;
+		if (rpm == 1000) {
+			this.fuelConsumption = fuelConsumption;
+		} else if (rpm == 2000) {
+			this.fuelConsumption = fuelConsumption;
+		} else if (rpm == 4000) {
+			this.fuelConsumption = fuelConsumption;
+		}
 	}
 	public Double getCarbonEmissions() {
 		return carbonEmissions;
