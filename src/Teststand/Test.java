@@ -1,5 +1,5 @@
 package Teststand;
 
-public class Test {
+public class Test extends Teststand {
 
 }
