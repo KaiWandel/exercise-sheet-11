@@ -3,11 +3,12 @@ import static java.lang.Integer.parseInt;
 import java.util.Calendar;
 
 public class CleanMe {
-
+	//Methode schreibt alles in ein neues array "weekdays"
     static String[] weekDays = new String[] {
             "Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur"
-    };
-    
+    }; //falsches Semikolon
+
+    //
     static void setCalendarDate(final Calendar cal, final String date, final String sep) {
         final String[] fs = date.split(sep);
         cal.set(parseInt(fs[0]), parseInt(fs[1]) - 1, parseInt(fs[2]));
@@ -28,5 +29,4 @@ public class CleanMe {
         final int wd = cal.get(Calendar.DAY_OF_WEEK);
         System.out.printf("%sday\n", weekDays[wd - 1]);
     }
-
 }
