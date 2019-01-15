@@ -2,16 +2,22 @@ package Teststand;
 
 public abstract class Producer {
 	
+	private String vehicleType;
 	private String producerName;
 	
-	private String vehicleType;
-	
-	public void setName (String name){
-		this.setName = name;
-		}			
+	public String getProducerName() {
+		return producerName;
 	}
-	public void setType() {
-		String vehicleType = this.setType();
+	
+	public void setProducerName(String producerName) {
+		this.producerName = producerName;
+	}
+	
+	public String getVehicleType() {
 		return vehicleType;
+	}
+	
+	public void setVehicleType(String vehicleType) {
+		this.vehicleType = vehicleType;
 	}
 }
