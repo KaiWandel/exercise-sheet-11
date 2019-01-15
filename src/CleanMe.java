@@ -26,6 +26,7 @@ public class CleanMe {
                 cal.set(parseInt(fs[0]), parseInt(fs[1]) - 1, parseInt(fs[2]));
             }
         }
+        System.out.println(cal.get(Calendar.DAY_OF_WEEK);
         final int wd = cal.get(Calendar.DAY_OF_WEEK);
         System.out.printf("%sday\n", weekDays[wd - 1]);
     }
