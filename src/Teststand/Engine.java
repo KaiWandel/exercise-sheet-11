@@ -15,7 +15,7 @@ public class Engine {
 		this.carbonEmissions = carbonEmissions;
 	}
 	public Double carbonEmissionsCalc() {
-		if (fuelType == "diesel") {
+		if (fuelType == "Diesel") {
 			carbonEmissions = fuelConsumption * 26.5;
 		}
 		else {
@@ -28,6 +28,13 @@ public class Engine {
 			this.efficiency = efficiency; 
 		} else {
 			throw new IllegalArgumentException( "Efficiency nur zwischen 0 und 0.99" ); 
+		}
+	}
+	public void setFuelType(String fuelType ) {
+		if (fuelType == "Diesel" ||fuelType == "Petrol") {
+			this.fuelType = fuelType;
+		} else {
+			throw new IllegalArgumentException( "Muss entweder Petrol oder Diesel sein" ); 
 		}
 	}
 	public String getFuelType() {
