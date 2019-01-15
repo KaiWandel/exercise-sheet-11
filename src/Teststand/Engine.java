@@ -2,13 +2,29 @@ package Teststand;
 
 public class Engine {
 	private String fuel;
-	private Integer efficiency;
+	private Double efficiency;
 	private Integer rpm;
 	private Integer fuelConsumption;
-	private Integer carbonEmissions;
+	private Double carbonEmissions;
 	
-	public Engine (final String fuel, final Integer efficiency, Integer rpm, Integer fuelConsumption, Integer carbonEmissions) {
-	
+	public Engine (final String fuel, final Double efficiency, Integer rpm, Integer fuelConsumption, Double carbonEmissions) {
+		this.fuel = fuel;
+		this.efficiency = efficiency;
+		this.rpm =rpm;
+		this.fuelConsumption = fuelConsumption;
+		this.carbonEmissions = carbonEmissions;
+	}
+	public Double carbonEmissionsCalc() {
+		if (fuel == diesel) {
+			carbonEmissions = fuelConsumption * 26.5;
+		}
+		else {
+			carbonEmissions = fuelConsumption * 23.8;
+		}
+		return carbonEmissions;
+	}
+	public void createDieselEngine() {
+		Engine diesel = new Engine ("Diesel", 0.6, rpm, )
 	}
 	public String getFuel() {
 		return fuel;
@@ -16,10 +32,10 @@ public class Engine {
 	public void setFuel(String fuel) {
 		this.fuel = fuel;
 	}
-	public Integer getEfficiency() {
+	public Double getEfficiency() {
 		return efficiency;
 	}
-	public void setEfficiency(Integer efficiency) {
+	public void setEfficiency(Double efficiency) {
 		this.efficiency = efficiency;
 	}
 	public Integer getRpm() {
