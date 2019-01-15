@@ -2,7 +2,7 @@ import static java.lang.Integer.parseInt;
 
 import java.util.Calendar;
 
-public class CleanMe {
+/*public class CleanMe {
 	//Methode schreibt alles in ein neues array "weekdays"
     static String[] weekDays = new String[] {
             "Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur"
@@ -30,4 +30,4 @@ public class CleanMe {
         final int wd = cal.get(Calendar.DAY_OF_WEEK);
         System.out.printf("%sday\n", weekDays[wd - 1]);
     }
-}
+}*/
