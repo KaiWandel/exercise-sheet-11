@@ -2,8 +2,12 @@ package Teststand;
 
 public class Tennis extends Vehicle{
 
-	public Tennis(String vehicleType, String producerName, String color, String engineType, Integer fuelConsumption) {
-		super(vehicleType, producerName, color, engineType, fuelConsumption);
-		// TODO Auto-generated constructor stub
+	public Tennis(final String color,final String engineType,final Integer fuelConsumption) {
+		super();
+		this.color =  color;
+		this.engineType = engineType;
+		this.fuelConsumption = fuelConsumption;
+		this.vehicleType = "Tennis";
+		this.producerName = "IW";		
 	}
 }
