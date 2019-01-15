@@ -1,21 +1,21 @@
 package Teststand;
 
 public class Engine {
-	private String fuel;
+	private String fuelType;
 	private Double efficiency;
 	private Integer rpm;
 	private Integer fuelConsumption;
 	private Double carbonEmissions;
 	
-	public Engine (final String fuel, final Double efficiency, Integer rpm, Integer fuelConsumption, Double carbonEmissions) {
-		this.fuel = fuel;
+	public Engine (final String fuelType, final Double efficiency, Integer rpm, Integer fuelConsumption, Double carbonEmissions) {
+		this.fuelType = fuelType;
 		this.efficiency = efficiency;
 		this.rpm =rpm;
 		this.fuelConsumption = fuelConsumption;
 		this.carbonEmissions = carbonEmissions;
 	}
 	public Double carbonEmissionsCalc() {
-		if (fuel == diesel) {
+		if (fuelType == "diesel") {
 			carbonEmissions = fuelConsumption * 26.5;
 		}
 		else {
@@ -23,20 +23,18 @@ public class Engine {
 		}
 		return carbonEmissions;
 	}
-	public void createDieselEngine() {
-		Engine diesel = new Engine ("Diesel", 0.6, rpm, )
+	public void setEfficiency(double efficiency) {
+		if (efficiency > 0 || efficiency < 1) {
+			this.efficiency = efficiency; 
+		} else {
+			throw new IllegalArgumentException( "Efficiency nur zwischen 0 und 0.99" ); 
+		}
 	}
-	public String getFuel() {
-		return fuel;
-	}
-	public void setFuel(String fuel) {
-		this.fuel = fuel;
+	public String getFuelType() {
+		return fuelType;
 	}
 	public Double getEfficiency() {
 		return efficiency;
-	}
-	public void setEfficiency(Double efficiency) {
-		this.efficiency = efficiency;
 	}
 	public Integer getRpm() {
 		return rpm;
@@ -50,10 +48,10 @@ public class Engine {
 	public void setFuelConsumption(Integer fuelConsumption) {
 		this.fuelConsumption = fuelConsumption;
 	}
-	public Integer getCarbonEmissions() {
+	public Double getCarbonEmissions() {
 		return carbonEmissions;
 	}
-	public void setCarbonEmissions(Integer carbonEmissions) {
+	public void setCarbonEmissions(Double carbonEmissions) {
 		this.carbonEmissions = carbonEmissions;
 	}
 }
