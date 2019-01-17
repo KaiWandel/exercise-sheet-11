@@ -14,6 +14,7 @@ public class Test extends Teststand {
 		this.carbonEmission = carbonEmission;
 	}
 
+
 	public Integer getRpm() {
 		return rpm;
 	}
@@ -45,6 +46,8 @@ public class Test extends Teststand {
 	public void setCarbonEmission(Integer carbonEmission) {
 		this.carbonEmission = carbonEmission;
 	}
-	
+	public Test highwayTest = new Test () {
+		
+	}
 	
 }
