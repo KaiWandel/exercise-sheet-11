@@ -4,16 +4,21 @@ public class Engine {
 	private String fuelType;
 	private Double efficiency;
 	private Integer rpm;
-	private Integer fuelConsumption;
+	private Double fuelConsumption;
 	private Double carbonEmissions;
 	
-	public Engine (final String fuelType, final Double efficiency, Integer rpm, Integer fuelConsumption, Double carbonEmissions) {
+	public Engine (final String fuelType, final Double efficiency, Integer rpm, Double fuelConsumption, Double carbonEmissions) {
 		this.fuelType = fuelType;
 		this.efficiency = efficiency;
 		this.rpm =rpm;
 		this.fuelConsumption = fuelConsumption;
 		this.carbonEmissions = carbonEmissions;
 	}
+	public Double fuelConsumptionCalc() {
+		fuelConsumption = (rpm * efficiency) / 100;
+		return fuelConsumption;
+	}
+	
 	public Double carbonEmissionsCalc() {
 		if (fuelType == "Diesel") {
 			carbonEmissions = fuelConsumption * 26.5;
@@ -52,7 +57,7 @@ public class Engine {
 	public Integer getFuelConsumption() {
 		return fuelConsumption;
 	}
-	public void setFuelConsumption(Integer fuelConsumption) {
+	public void setFuelConsumption(double fuelConsumption) {
 		if (rpm == 1000) {
 			this.fuelConsumption = fuelConsumption;
 		} else if (rpm == 2000) {
