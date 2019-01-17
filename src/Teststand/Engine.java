@@ -54,7 +54,7 @@ public class Engine {
 	public void setRpm(Integer rpm) {
 		this.rpm = rpm;
 	}
-	public Integer getFuelConsumption() {
+	public Double getFuelConsumption() {
 		return fuelConsumption;
 	}
 	public void setFuelConsumption(double fuelConsumption) {
