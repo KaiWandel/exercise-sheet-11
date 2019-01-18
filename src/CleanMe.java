@@ -16,6 +16,7 @@ public class CleanMe {
     
     public static void main(final String[] args) {
         final Calendar cal = Calendar.getInstance();
+        
         if (args.length >= 1) {
             if (args[0].indexOf("-") >= 0) {
                 setCalendarDate(cal, args[0], "-");
@@ -28,5 +29,7 @@ public class CleanMe {
         }
         final int wd = cal.get(Calendar.DAY_OF_WEEK);
         System.out.printf("%sday\n", weekDays[wd - 1]);
+        System.out.print(args[0]);
     }
+    
 }
