@@ -35,15 +35,15 @@ public class Engine {
  * 
  * Eine Methode, welche mit Hilfe der Drehzahl und dem Effizienzkoeffizienten den Treibstoffverbrauch berechnet 
  */
-/**
+/*
  * @requires rpm ist initialisiert
  * @requires efficiency ist initialisiert
  * @requires fuelConsumption ist initialisiert
- * @requires rpm != 0
- * @requires efficiency != 0
+ * @requires rpm darf nicht null sein
+ * @requires efficiency darf nicht null sein
  * 
  * @ensures fuelConsumption hat einen neuen Wert
- * @return
+ * 
  */
 	public Double fuelConsumptionCalc() {
 		fuelConsumption = rpm * 1/efficiency / 100;
@@ -54,35 +54,34 @@ public class Engine {
  * 
  * Eine Methode, welche mit Hilfe der Drehzahl und dem Effizienzkoeffizienten den CO2-Ausstoß berechnet 
  */
-/**
+/*
  * @requires rpm ist initialisiert
  * @requires efficiency ist initialisiert
  * @requires fuelConsumption ist initialisiert
- * @requires rpm != 0
- * @requires efficiency != 0
+ * @requires rpm darf nicht null sein
+ * @requires efficiency darf nicht null sein
  * 
  * @ensures fuelConsumption hat einen neuen Wert
- * @return
+ *
  */	
 	public Double carbonEmissionsCalc() {
 		carbonEmissions = rpm * (1/efficiency) / 100 * 28.5;
 		return carbonEmissions;
 	}
 /*
- * Setter Methode für den Double efficiency
+ * Setter Methode für den Double Effizienzkoeffizienten
  * 
- * Setter Methode zur Initialisierung eines Werts für den Double efficiency,
- * welcher zwischen 
+ * Setter Methode zur Initialisierung eines Werts für den Double Effizienzkoeffizienten,
+ * welcher zwischen 0 und 0.99 liegen muss,
+ * außerhalb dieses Grenzbereichs wird eine Exception geworfen
  */
-/**
- * @requires rpm ist initialisiert
+/*
  * @requires efficiency ist initialisiert
- * @requires fuelConsumption ist initialisiert
- * @requires rpm != 0
- * @requires efficiency != 0
+ * @ensures efficiency hat einen neuen Wert zwischen 0-0.99
  * 
- * @ensures fuelConsumption hat einen neuen Wert
- * @return
+ * @param efficiency muss zwischen 0-0.99 sein
+ * @throws IllegalArgumentException wenn Wert nicht zwischen 0-0.99 liegt
+ * 
  */	
 	public void setEfficiency(double efficiency) {
 		if (efficiency > 0 && efficiency < 1) {
@@ -91,6 +90,21 @@ public class Engine {
 			throw new IllegalArgumentException( "Efficiency nur zwischen 0 und 0.99" ); 
 		}
 	}
+/*
+ * Setter Methode für den String FuelType
+ * 
+ * Setter Methode zur Initialisierung eines Werts für den String FuelType,
+ * welcher entweder "Diesel" oder "Benzin" sein muss,
+ * bei einer anderen Eingabe wird eine Exception geworfen
+ */
+/*
+ * @requires FuelType ist initialisiert
+ * @ensures FuelType enthält entweder den String "Diesel" oder "Benzin"
+ * 
+ * @param efficiency muss entweder "Diesel" oder "Benzin" sein
+ * @throws IllegalArgumentException wenn der String nicht "Diesel" oder "Benzin" ist
+ * 
+ */	
 	public void setFuelType(String fuelType ) {
 		if (fuelType == "Diesel" ||fuelType == "Benzin") {
 			this.fuelType = fuelType;
@@ -98,19 +112,33 @@ public class Engine {
 			throw new IllegalArgumentException( "Muss entweder Benzin oder Diesel sein" ); 
 		}
 	}
+/*
+ * Getter Methode für den String Treibstofftyp, kann nur Benzin oder Diesel sein
+ */
 	public String getFuelType() {
 		return fuelType;
 	}
+/*
+ * Getter Methode für den Double Effizienzkoeffizienten, kann nur zwischen 0-0.99 liegen
+ */
 	public Double getEfficiency() {
 		return efficiency;
 	}
-		public Double getFuelConsumption() {
+/*
+ * Getter Methode für den Double Treibstoffverbrauch
+ */
+	public Double getFuelConsumption() {
 		return fuelConsumption;
 	}
-	
+/*
+ * Getter Methode für den Double CO2-Ausstoß
+ */	
 	public Double getCarbonEmissions() {
 		return carbonEmissions;
 	}
+/*
+ * Setter Methode für den Double CO2-Ausstoß
+ */
 	public void setCarbonEmissions(Double carbonEmissions) {
 		this.carbonEmissions = carbonEmissions;
 	}
