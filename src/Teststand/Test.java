@@ -16,7 +16,7 @@ public class Test extends Teststand {
 	}
 	public Double CO2Test() {
 		for (Integer rpm : TestDrehzahlen) {
-			double Ergebnis = Engine.carbonEmissionsCalc()
+			double Ergebnis = Engine.carbonEmissionsCalc();
 			return Ergebnis;
 		}
 	}
