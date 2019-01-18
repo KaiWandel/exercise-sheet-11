@@ -26,7 +26,7 @@ public class Engine {
 		else if (fuelType == "Benzin") {
 			carbonEmissions = fuelConsumption * 23.8;
 		} else {
-			throw new throw new IllegalArgumentException ("Muss entweder Benzin oder Diesel sein");
+			throw new IllegalArgumentException ("Muss entweder Benzin oder Diesel sein");
 		}
 		return carbonEmissions;
 	}
