@@ -2,16 +2,12 @@ package Teststand;
 
 public class Test extends Teststand {
 	private Integer rpm;
-	private Double efficiency;
-	private Double fuelConsumption;
-	private Integer carbonEmission;
-	
-	public Test(Integer rpm, Double efficiency, Double fuelConsumption, Integer carbonEmission) {
+	private String testName;
+	Integer[] TestDrehzahlen = new Integer[] {1000,2000,3000,4000,5000,6000};
+	public Test(Integer rpm, String testName) {
 		super();
 		this.rpm = rpm;
-		this.efficiency = efficiency;
-		this.fuelConsumption = fuelConsumption;
-		this.carbonEmission = carbonEmission;
+		this.testName = testName;
 	}
 
 
@@ -19,35 +15,12 @@ public class Test extends Teststand {
 		return rpm;
 	}
 
-	public void setRpm(Integer rpm) {
-		this.rpm = rpm;
-	}
-
-	public Double getEfficiency() {
-		return efficiency;
-	}
-
-	public void setEfficiency(Double efficiency) {
-		this.efficiency = efficiency;
-	}
-
-	public Double getFuelConsumption() {
-		return fuelConsumption;
-	}
-
-	public void setFuelConsumption(Double fuelConsumption) {
-		this.fuelConsumption = fuelConsumption;
-	}
-
-	public Integer getCarbonEmission() {
-		return carbonEmission;
-	}
-
-	public void setCarbonEmission(Integer carbonEmission) {
-		this.carbonEmission = carbonEmission;
-	}
-	public Test highwayTest = new Test () {
+	public Double CO2Test() {
 		
 	}
-	
+}
+
+public static void main (String[] args) {
+	Vehicle Vehicle1 = new M6( "Blue", "BENZIN" , 3.4 );
+	Engine Engine1 = new Engine("BENZIN" , 0.8 , 0, 0.0, 0.0 );
 }
