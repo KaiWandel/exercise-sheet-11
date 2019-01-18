@@ -8,9 +8,7 @@ package Teststand;
  */
 public abstract class Vehicle extends Producer {
 	
-	protected enum EngineType {
-		BENZIN, DIESEL
-	}
+	protected String engineType;
 	protected String color;
 	protected Double fuelConsumption;
 	/*
@@ -21,12 +19,11 @@ public abstract class Vehicle extends Producer {
 	}
 	/*
 	 * Getter Methode für den String Motortyp, kann nur Benzin oder Diesel sein
-	
+	 */ 
 	public String getEngineType() {
-		for (EngineType.BENZIN)
-		return "Benziner";
+		return engineType;
 	}
-	*/ 
+	
 	
 	/*
 	 * Getter Methode für den Double des Treibstoffverbrauchs
