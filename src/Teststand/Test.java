@@ -1,19 +1,14 @@
 package Teststand;
-
+/*
+ * Die Klasse Test, welche von der Oberklasse Teststand erbt
+ */
 public class Test extends Teststand {
-	
-	public static void main(String[] args) {
-		// Testfahrzeug erstellen
-		
-		// Motor erzeugen
-		// Fahrzeug einen Test zuordnen
-		// Motor über Fahrzeug die Inputdaten des Teststands empfangen lassen
-		// Motor Inoutdaten verarbeiten lassen und CO2 Wert an das Fahrzeug weiterleiten
-		// Fahrzeug übermittelt CO2 Wert an teststand
-		// neues Fahrzeug oder Inputdaten erstellen
-		Vehicle Vehicle1 = new M6( "Blue", "BENZIN" , 3.4 );
-		Engine Engine1 = new Engine("BENZIN" , 0.8 , 0, 0.0, 0.0 );
-	}
+/*
+ * Methode der Klasse Test zur vergabe von einer Drehzahl und der anschließenden Berechnung des CO2-Ausstoßes
+ * 
+ * Eine Methode, welche mit Hilfe einer gesetzten Drehzahl und der Methode zur Berechnung des CO2-Ausstoßes der Klasse Engine
+ * den CO2-Ausstoß berechent udn diesen ausgibt
+ */	
 	public Double CO2Test() {
 		for (Integer rpm : TestDrehzahlen) {
 			double Ergebnis = Engine.carbonEmissionsCalc();
