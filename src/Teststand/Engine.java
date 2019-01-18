@@ -23,8 +23,10 @@ public class Engine {
 		if (fuelType == "Diesel") {
 			carbonEmissions = fuelConsumption * 26.5;
 		}
-		else {
+		else if (fuelType == "Benzin") {
 			carbonEmissions = fuelConsumption * 23.8;
+		} else {
+			throw new throw new IllegalArgumentException ("Muss entweder Benzin oder Diesel sein");
 		}
 		return carbonEmissions;
 	}
@@ -36,10 +38,10 @@ public class Engine {
 		}
 	}
 	public void setFuelType(String fuelType ) {
-		if (fuelType == "Diesel" ||fuelType == "Petrol") {
+		if (fuelType == "Diesel" ||fuelType == "Benzin") {
 			this.fuelType = fuelType;
 		} else {
-			throw new IllegalArgumentException( "Muss entweder Petrol oder Diesel sein" ); 
+			throw new IllegalArgumentException( "Muss entweder Benzin oder Diesel sein" ); 
 		}
 	}
 	public String getFuelType() {
