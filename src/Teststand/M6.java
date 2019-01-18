@@ -1,7 +1,24 @@
 package Teststand;
-
+/*
+ * Die Klasse M6 welche von ihrer Oberklasse Vehicle erbt,
+ * 
+ * sie erbt folgende Attribute von Vehicle: 
+ * einen String mit der Farbe
+ * einen String mit dem Motortyp, kann entweder Benzin oder Diesel sein
+ * 
+ * Variablen der Klasse Tennis sind:
+ * einen String mit dem Fahrzeugtyp, welcher mit dem String "M6" gesetzt ist
+ * einen String mit dem Herstellername, welcher mit dem String "SMW" gesetzt ist
+ */
 public class M6 extends Vehicle {
-
+/*
+ * Konstruktor für die Objekterzeugung aus der Klasse M6
+ * 
+ * Im Konstruktor wird der String mit der Farbe, 
+ * der String mit dem Motortyp,
+ * der String mit dem Fahrzeugtyp, welcher mit dem String "M6" gesetzt ist,
+ * der String mit dem Herstellername, welcher mit dem String "SMW" gesetzt ist
+ */
 	public M6(final String color,final String engineType,final Double fuelConsumption) {
 		super();
 		this.color =  color;
@@ -9,20 +26,5 @@ public class M6 extends Vehicle {
 		this.engineType = engineType;
 		this.vehicleType = "M6";
 		this.producerName = "SMW";		
-	}
-	public static void main(String[] args) {
-		Vehicle Vehicle1 = new M6( "Blue", "BENZIN" , 3.4 );
-		Vehicle Vehicle2 = new Tennis("Red", "DIESEL" , 4.7);
-		System.out.print(Vehicle1.getColor());
-		System.out.print(Vehicle1.getEngineType());
-		System.out.print(Vehicle1.getVehicleType());
-		System.out.print(Vehicle1.getProducerName());
-		System.out.print(Vehicle1.getFuelConsumption());
-		System.out.print(Vehicle2.getColor());
-		System.out.print(Vehicle2.getEngineType());
-		System.out.print(Vehicle2.getVehicleType());
-		System.out.print(Vehicle2.getProducerName());
-		System.out.print(Vehicle2.getFuelConsumption());
-		
 	}
 }
