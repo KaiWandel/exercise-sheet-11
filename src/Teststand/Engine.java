@@ -20,14 +20,7 @@ public class Engine {
 	}
 	
 	public Double carbonEmissionsCalc() {
-		if (fuelType == "Diesel") {
-			carbonEmissions = rpm * (1/efficiency) / 100 * 26.5;
-		}
-		else if (fuelType == "Benzin") {
-			carbonEmissions = rpm * (1/efficiency) / 100 * 23.8;
-		} else {
-			throw new IllegalArgumentException ("Muss entweder Benzin oder Diesel sein");
-		}
+		carbonEmissions = rpm * (1/efficiency) / 100;
 		return carbonEmissions;
 	}
 	public void setEfficiency(double efficiency) {
