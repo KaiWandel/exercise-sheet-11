@@ -15,16 +15,16 @@ public class Engine {
 		this.carbonEmissions = carbonEmissions;
 	}
 	public Double fuelConsumptionCalc() {
-		fuelConsumption = (rpm * efficiency) / 100;
+		fuelConsumption = rpm * 1/efficiency / 100;
 		return fuelConsumption;
 	}
 	
 	public Double carbonEmissionsCalc() {
 		if (fuelType == "Diesel") {
-			carbonEmissions = fuelConsumption * 26.5;
+			carbonEmissions = rpm * (1/efficiency) / 100 * 26.5;
 		}
 		else if (fuelType == "Benzin") {
-			carbonEmissions = fuelConsumption * 23.8;
+			carbonEmissions = rpm * (1/efficiency) / 100 * 23.8;
 		} else {
 			throw new IllegalArgumentException ("Muss entweder Benzin oder Diesel sein");
 		}
@@ -50,24 +50,10 @@ public class Engine {
 	public Double getEfficiency() {
 		return efficiency;
 	}
-	public Integer getRpm() {
-		return rpm;
-	}
-	public void setRpm(Integer rpm) {
-		this.rpm = rpm;
-	}
-	public Double getFuelConsumption() {
+		public Double getFuelConsumption() {
 		return fuelConsumption;
 	}
-	public void setFuelConsumption(double fuelConsumption) {
-		if (rpm == 1000) {
-			this.fuelConsumption = fuelConsumption;
-		} else if (rpm == 2000) {
-			this.fuelConsumption = fuelConsumption;
-		} else if (rpm == 4000) {
-			this.fuelConsumption = fuelConsumption;
-		}
-	}
+	
 	public Double getCarbonEmissions() {
 		return carbonEmissions;
 	}
