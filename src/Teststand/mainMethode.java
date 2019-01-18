@@ -11,5 +11,7 @@ public class mainMethode {
 		// Motor Inoutdaten verarbeiten lassen und CO2 Wert an das Fahrzeug weiterleiten
 		// Fahrzeug übermittelt CO2 Wert an teststand
 		// neues Fahrzeug oder Inputdaten erstellen
+		Vehicle Vehicle1 = new M6( "Blue", "BENZIN" , 3.4 );
+		Engine Engine1 = new Engine("BENZIN" , 0.8 , 0, 0.0, 0.0 );
 	}
 }
